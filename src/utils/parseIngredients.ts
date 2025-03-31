@@ -1,16 +1,20 @@
-import { Meal } from "../types/Meal";
+import { Meal } from '../types/Meal';
 
 export function getMergedIngredients(meals: Meal[]) {
-  const map: { [key: string]: string[] } = {};
+  const map: { [ingredient: string]: string[] } = {};
 
   meals.forEach((meal) => {
     for (let i = 1; i <= 20; i++) {
-      const ing = meal[`strIngredient${i}`]?.trim();
-      const meas = meal[`strMeasure${i}`]?.trim();
+      const ingredient = meal[`strIngredient${i}`]?.trim();
+      const measure = meal[`strMeasure${i}`]?.trim();
 
-      if (ing) {
-        if (!map[ing]) map[ing] = [];
-        if (meas) map[ing].push(meas);
+      if (ingredient) {
+        if (!map[ingredient]) {
+          map[ingredient] = [];
+        }
+        if (measure) {
+          map[ingredient].push(measure);
+        }
       }
     }
   });
