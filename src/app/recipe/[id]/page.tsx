@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Meal } from "@/types/Meal";
+import Image from 'next/image';
 
 interface MealsResponse {
   meals: Meal[];
@@ -41,9 +42,11 @@ export default function RecipeDetailPage() {
         ← Назад к рецептам
       </Link>
       <h1 className="text-2xl font-bold mb-2">{meal.strMeal}</h1>
-      <img
+      <Image
         src={meal.strMealThumb}
         alt={meal.strMeal}
+        width={400}
+        height={300}
         className="w-full rounded mb-4"
       />
       <p className="text-sm mb-2">

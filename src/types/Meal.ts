@@ -5,5 +5,5 @@ export interface Meal {
   strArea: string;
   strMealThumb: string;
   strInstructions: string;
-  [key: string]: any;
+  [key: string]: string | undefined;
 }

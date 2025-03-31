@@ -6,7 +6,7 @@ import { RecipeCard } from "../../components/RecipeCard";
 import { getMergedIngredients } from "../../utils/parseIngredients";
 import { Meal } from "../../types/Meal";
 
-export const FavoritesPage = observer(() => {
+const FavoritesPage = observer(() => {
   if (favoriteStore.favorites.length === 0) {
     return <p className="p-4">Вы еще не добавили рецепты в избранное.</p>;
   }
